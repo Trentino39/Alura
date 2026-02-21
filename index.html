@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Contador</title>
-  <style>
-    .contador {
-      font-size: 20px;
-      text-align: center;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Objetivos do Ano</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <h1>Meus Objetivos do ano 2026</h1>
 
-  <div id="contador" class="contador">Carregando...</div>
+    <div class="tabs">
+      <button class="botao ativo">Cursos na Alura</button>
+      <button class="botao">Criar projetos em Javascript</button>
+      <button class="botao">Criar um portfólio</button>
+      <button class="botao">Atualizar meu currículo</button>
+    </div>
 
-  <script>
-    const tempoObjetivo = new Date(2027, 5, 15, 12, 0, 0);
+    <div class="conteudo">
+      <h2 id="titulo">Estudar 4 cursos na Alura</h2>
+      <p class="sub">TEMPO PARA COMPLETAR O OBJETIVO</p>
 
-    function calculaTempo(tempoObjetivo) {
-      const tempoAtual = new Date();
-      let tempoFinal = tempoObjetivo - tempoAtual;
+      <div class="contador">
+        <div class="tempo">
+          <span id="dias">0</span>
+          <small>dias</small>
+        </div>
+        <div class="tempo">
+          <span id="horas">0</span>
+          <small>horas</small>
+        </div>
+        <div class="tempo">
+          <span id="min">0</span>
+          <small>min</small>
+        </div>
+        <div class="tempo">
+          <span id="seg">0</span>
+          <small>seg</small>
+        </div>
+      </div>
 
-      if (tempoFinal <= 0) {
-        return "Tempo esgotado!";
-      }
+      <p id="finalizado" class="finalizado"></p>
+    </div>
+  </div>
 
-      let segundos = Math.floor(tempoFinal / 1000);
-      let minutos = Math.floor(segundos / 60);
-      let horas = Math.floor(minutos / 60);
-      let dias = Math.floor(horas / 24);
-
-      segundos %= 60;
-      minutos %= 60;
-      horas %= 24;
-
-      return (
-        dias + " dias " +
-        horas + " horas " +
-        minutos + " minutos " +
-        segundos + " segundos"
-      );
-    }
-
-    function atualizarContador() {
-      document.getElementById("contador").textContent =
-        calculaTempo(tempoObjetivo);
-    }
-
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
-  </script>
-
+  <script src="main.js"></script>
 </body>
 </html>

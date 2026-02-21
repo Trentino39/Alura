@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f0f1a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #1b1b2f;
+  padding: 32px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 720px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.botao {
+  background: #262640;
+  border: none;
+  color: #fff;
+  padding: 12px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.botao:hover {
+  background: #34345c;
+}
+
+.botao.ativo {
+  border-bottom: 3px solid #22c55e;
+  background: #2f2f55;
+}
+
+.conteudo h2 {
+  margin-bottom: 6px;
+}
+
+.sub {
+  color: #22c55e;
+  font-size: 12px;
+  margin-bottom: 24px;
+}
+
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.tempo span {
+  font-size: 48px;
+  font-weight: bold;
+  display: block;
+}
+
+.tempo small {
+  color: #22c55e;
+}
+
+.finalizado {
+  margin-top: 20px;
+  color: #ef4444;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tempo span {
+    font-size: 36px;
+  }
+}
