@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador</title>
+  <style>
+    .contador {
+      font-size: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="contador" class="contador">Carregando...</div>
+
+  <script>
+    const tempoObjetivo = new Date(2027, 5, 15, 12, 0, 0);
+
+    function calculaTempo(tempoObjetivo) {
+      const tempoAtual = new Date();
+      let tempoFinal = tempoObjetivo - tempoAtual;
+
+      if (tempoFinal <= 0) {
+        return "Tempo esgotado!";
+      }
+
+      let segundos = Math.floor(tempoFinal / 1000);
+      let minutos = Math.floor(segundos / 60);
+      let horas = Math.floor(minutos / 60);
+      let dias = Math.floor(horas / 24);
+
+      segundos %= 60;
+      minutos %= 60;
+      horas %= 24;
+
+      return (
+        dias + " dias " +
+        horas + " horas " +
+        minutos + " minutos " +
+        segundos + " segundos"
+      );
+    }
+
+    function atualizarContador() {
+      document.getElementById("contador").textContent =
+        calculaTempo(tempoObjetivo);
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+
+</body>
+</html>
